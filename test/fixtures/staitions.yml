@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staition_name: MyString
+  line: MyString
+  on_foot: MyString
+
+two:
+  staition_name: MyString
+  line: MyString
+  on_foot: MyString

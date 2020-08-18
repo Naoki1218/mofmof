@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'staitions/index'
+  get 'staitions/new'
+  get 'staitions/edit'
+  get 'staitions/destroy'
+  get 'staitions/update'
+  get 'staitions/create'
+  resources :appartment
 end
