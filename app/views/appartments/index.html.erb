@@ -10,6 +10,11 @@
   </tr>
   <% @appartments.each do |appartment| %>
   <tr>
+    <td><%= appartment.name %></td>
+    <td><%= appartment.rent %></td>
+    <td><%= appartment.address %></td>
+    <td><%= appartment.year_built %></td>
+    <td><%= appartment.optional %></td>
     <td><%= link_to '詳細', appartment_path(appartment.id) %></td>
     <td><%= link_to "編集", edit_appartment_path(appartment.id), data: { confirm: '本当に編集していいですか？' } %></td>
     <td><%= link_to '削除', appartment_path(appartment.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>

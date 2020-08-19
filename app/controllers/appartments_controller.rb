@@ -3,9 +3,8 @@ class AppartmentsController < ApplicationController
   def index
     @appartments = Appartment.all
   end
-
   def create
-    @appartment = Appartments.build(appartment_params)
+    @appartment = Appartment.new(appartment_params)
     if params[:back]
       render :new
     else
@@ -16,19 +15,16 @@ class AppartmentsController < ApplicationController
       end
     end
   end
-
   def show
     @appartments = Appartment.find(params[:id])
   end
-
   def new
-    @appartments = Appartment.new
+    @appartment = Appartment.new
+    # @appartment.Staition.build
   end
-
   def edit
     @appartments = Appartment.find(params[:id])
   end
-
   def updated
     @appartments = Appartment.find(params[:id])
     if @appartment.update(appartment_params)
@@ -37,18 +33,19 @@ class AppartmentsController < ApplicationController
       render :edit
     end
   end
-
   def destroy
     @appartment.destroy
     redirect_to appartments_path, notice:"削除しました！"
   end
 end
-
 private
 def appartment_params
-  params.require(:appartment).permit(:name, :rent, :address, :year_built, :optional)
+  params.require(:appartment).permit(:name, :rent, :address, :year_built, :optional, staition_attributes: [:line, :staition_name, :on_foot, :appartment_id, :id, :_destroy,],)
 end
 
+
+
+
 def set_appartment
-  @appartment = appartment.find(params[:id])
+  @appartment = Appartment.find(params[:id])
 end
