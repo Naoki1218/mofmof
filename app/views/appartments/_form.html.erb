@@ -1,0 +1,39 @@
+<%= form_with(model: @appartment, local: true) do |form| %>
+
+  <div class="appartment_name">
+    <%= form.label :物件名 %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="appartment_rent">
+    <%= form.label :賃料 %>
+    <%= form.text_field :rent %>円
+  </div>
+  <div class="appartment_address">
+    <%= form.label :住所 %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="appartment_year_built">
+    <%= form.label :築年数 %>
+    <%= form.text_field :year_built %>年
+  </div>
+  <div class="appartment_optional">
+    <%= form.label :備考 %>
+    <%= form.text_field :optional %>
+  </div>
+
+  <div class="staition_line">
+    <%= form.label :路線名 %>
+    <%= form.text_field :line %>
+  </div>
+  <div class="staition_staition_name">
+    <%= form.label :駅 %>
+    <%= form.text_field :staition_name %>
+  </div>
+  <div class="staition_on_foot">
+    <%= form.label :徒歩 %>
+    <%= form.text_field :on_foot %>分
+  </div>
+
+  <%= form.submit "登録" %>
+<% end %>
+<%= link_to "一覧画面にもどる", appartments_path %>

@@ -1,0 +1,20 @@
+<h1>閲覧画面</h1>
+<p>物件名: <%= @appartment.name %></p>
+<p>賃料: <%= @appartment.rent %></p>
+<p>住所: <%= @appartment.address %></p>
+<p>築年数: <%= @appartment.year_built %></p>
+<p>備考: <%= @appartment.optional %></p>
+<p id="notice"><%= notice %></p>
+
+  <h3>最寄り駅1</h3>
+  <p>路線名: <%= @staition.line %></p>
+  <p>駅名: <%= @staition.staition_name %></p>
+  <p>徒歩分数: <%= @staition.on_foot %></p>
+
+  <h3>最寄り駅2</h3>
+  <p>路線名: <%= @staition.line %></p>
+  <p>駅名: <%= @staition.staition_name %></p>
+  <p>徒歩分数: <%= @staition.on_foot %></p>
+
+<%= link_to '編集', edit_appartment_path(@appartment) %> |
+<%= link_to "物件一覧画面にもどる", appartments_path %>
