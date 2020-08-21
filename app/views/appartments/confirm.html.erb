@@ -1,0 +1,21 @@
+<h3>以下の内容で、登録する。</h3>
+<%= form_with(model: @appartment, url: appartments_path, local: true) do |form| %>
+<%= form.hidden_field :name %>
+<%= form.hidden_field :rent %>
+<%= form.hidden_field :address %>
+<%= form.hidden_field :year_built %>
+<%= form.hidden_field :optional %>
+<%= form.hidden_field :line %>
+<%= form.hidden_field :staition_name %>
+<%= form.hidden_field :on_foot %>
+<p>物件名:<%= @appartment.name %></p>
+<p>賃料:<%= @appartment.rent %></p>
+<p>住所:<%= @appartment.address %></p>
+<p>築年数:<%= @appartment.year_built %></p>
+<p>備考:<%= @appartment.optional %></p>
+<p>路線名:<%= @appartment.line %></p>
+<p>駅:<%= @appartment.staition_name %></p>
+<p>徒歩:<%= @appartment.on_foot %></p>
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+  <% end %>

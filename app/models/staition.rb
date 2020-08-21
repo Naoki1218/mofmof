@@ -1,4 +1,4 @@
 class Staition < ApplicationRecord
-  # validates :line, :staition_name, :on_foot, : true
+  validates :line, :on_foot, numericality: true
   belongs_to :appartment
 end

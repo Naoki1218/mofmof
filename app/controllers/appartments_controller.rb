@@ -18,7 +18,7 @@ class AppartmentsController < ApplicationController
   end
 
   def show
-    @appartments = Appartment.find(params[:id])
+    @appartment = Appartment.find(params[:id])
   end
 
   def new

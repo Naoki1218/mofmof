@@ -1,4 +1,14 @@
-<%= form_with(model: @appartment, local: true) do |form| %>
+<%= form_with(model: @appartment, local: true ) do |form| %>
+<% if @appartment.errors.any? %>
+<div id="error_explanation">
+  <h2><%= @appartment.errors.count %>件のエラーがあります。</h2>
+  <ul>
+    <% @appartment.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
   <div class="appartment_name">
     <%= form.label :物件名 %>
