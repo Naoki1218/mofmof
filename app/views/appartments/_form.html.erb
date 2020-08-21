@@ -21,18 +21,20 @@
     <%= form.text_field :optional %>
   </div>
 
+<%= form.fields_for :staitions do |n| %>
   <div class="staition_line">
-    <%= form.label :路線名 %>
-    <%= form.text_field :line %>
+    <%= n.label :路線名 %>
+    <%= n.text_field :line %>
   </div>
   <div class="staition_staition_name">
-    <%= form.label :駅 %>
-    <%= form.text_field :staition_name %>
+    <%= n.label :駅 %>
+    <%= n.text_field :staition_name %>
   </div>
   <div class="staition_on_foot">
-    <%= form.label :徒歩 %>
-    <%= form.text_field :on_foot %>分
+    <%= n.label :徒歩 %>
+    <%= n.text_field :on_foot %>分
   </div>
+<% end %>
 
   <%= form.submit "登録" %>
 <% end %>

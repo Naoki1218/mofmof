@@ -6,15 +6,14 @@
 <p>備考: <%= @appartment.optional %></p>
 <p id="notice"><%= notice %></p>
 
-  <h3>最寄り駅1</h3>
-  <p>路線名: <%= @staition %></p>
-  <p>駅名: <%= @staition %></p>
-  <p>徒歩分数: <%= @staition %></p>
+<% n = 0 %>
+<% @appartment.staitions.each do |staition| %> 
+  <h3>最寄り駅<%= n += 1 %></h3>
+  <p>路線名: <%= staition.line %></p>
+  <p>駅名: <%= staition.staition_name %></p>
+  <p>徒歩分数: <%= staition.on_foot %></p>
 
-  <h3>最寄り駅2</h3>
-  <p>路線名: <%= @staition %></p>
-  <p>駅名: <%= @staition %></p>
-  <p>徒歩分数: <%= @staition %></p>
 
+<% end %>
 <%= link_to '編集', edit_appartment_path(@appartment) %> |
 <%= link_to "物件一覧画面にもどる", appartments_path %>
